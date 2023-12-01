@@ -2,6 +2,10 @@ function TimeAgo(isoDateTime: string): string {
   const currentDate: Date = new Date()
   const inputDate: Date = new Date(isoDateTime)
 
+  if ( isNaN(inputDate.getTime()) ) {
+    return '';
+  }
+
   const timeDifference: number = currentDate.getTime() - inputDate.getTime()
   const seconds: number = Math.floor(timeDifference / 1000)
   const minutes: number = Math.floor(seconds / 60)
