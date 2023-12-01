@@ -8,6 +8,16 @@ test('returns an empty string if the input is NaN', () => {
     expect(TimeAgo('lorem-ipsum')).toBe('')
 })
 
+test('returns "1 second ago"', () => {
+    const oneSecondAgo = new Date(Date.now() - (1 * 1000))
+    expect(TimeAgo(oneSecondAgo.toISOString())).toBe('1 second ago')
+})
+
+test('returns "10 seconds ago"', () => {
+    const tenSecondsAgo = new Date(Date.now() - (10 * 1000))
+    expect(TimeAgo(tenSecondsAgo.toISOString())).toBe('10 seconds ago')
+})
+
 test('returns "1 day ago"', () => {
     const oneDayAgo = new Date(Date.now() - (1 * 24 * 60 * 60 * 1000))
     expect(TimeAgo(oneDayAgo.toISOString())).toBe('1 day ago')
