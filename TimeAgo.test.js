@@ -18,6 +18,26 @@ test('returns "10 seconds ago"', () => {
     expect(TimeAgo(tenSecondsAgo.toISOString())).toBe('10 seconds ago')
 })
 
+test('returns "1 minute ago"', () => {
+    const oneMinuteAgo = new Date(Date.now() - (1 * 60 * 1000))
+    expect(TimeAgo(oneMinuteAgo.toISOString())).toBe('1 minute ago')
+})
+
+test('returns "3 minutes ago"', () => {
+    const threeMinutesAgo = new Date(Date.now() - (3 * 60 * 1000))
+    expect(TimeAgo(threeMinutesAgo.toISOString())).toBe('3 minutes ago')
+})
+
+test('returns "1 hour ago"', () => {
+    const oneHourAgo = new Date(Date.now() - (1 * 60 * 60 * 1000))
+    expect(TimeAgo(oneHourAgo.toISOString())).toBe('1 hour ago')
+})
+
+test('returns "3 hours ago"', () => {
+    const threeHoursAgo = new Date(Date.now() - (3 * 60 * 60 * 1000))
+    expect(TimeAgo(threeHoursAgo.toISOString())).toBe('3 hours ago')
+})
+
 test('returns "1 day ago"', () => {
     const oneDayAgo = new Date(Date.now() - (1 * 24 * 60 * 60 * 1000))
     expect(TimeAgo(oneDayAgo.toISOString())).toBe('1 day ago')
