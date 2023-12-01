@@ -1,4 +1,4 @@
-export function timeAgo(isoDateTime: string): string {
+function TimeAgo(isoDateTime: string): string {
   const currentDate: Date = new Date()
   const inputDate: Date = new Date(isoDateTime)
 
@@ -27,3 +27,5 @@ export function timeAgo(isoDateTime: string): string {
     return `${seconds} second${seconds > 1 ? 's' : ''} ago`
   }
 }
+
+module.exports = TimeAgo
