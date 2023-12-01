@@ -23,3 +23,15 @@ test('returns "5 days ago"', () => {
     fiveDaysAgo.setDate(fiveDaysAgo.getDate() - 5)
     expect(TimeAgo(fiveDaysAgo.toISOString())).toBe('5 days ago')
 })
+
+test('returns "1 month ago"', () => {
+    const oneMonthAgo = new Date()
+    oneMonthAgo.setDate(oneMonthAgo.getDate() - 30)
+    expect(TimeAgo(oneMonthAgo.toISOString())).toBe('1 month ago')
+})
+
+test('returns "2 months ago"', () => {
+    const twoMonthsAgo = new Date()
+    twoMonthsAgo.setDate(twoMonthsAgo.getDate() - 60)
+    expect(TimeAgo(twoMonthsAgo.toISOString())).toBe('2 months ago')
+})
